@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #000000;
+  color: #fff;
+}
+
+header {
+  position: relative; /* 设置为相对定位，以便子元素可以使用绝对定位 */
+  /* 根据需要调整顶部内边距 */
+}
+.motioncontainer {
+  display: flex;
+}
+.motionleft {
+  background-color: rgb(33, 27, 103);
+  width: 30%;
+  height: 100vh;
+}
+.logo {
+  margin-left: 50px;
+  padding: 3rem;
+}
+.motionright {
+  position: relative;
+
+  height: 100%;
+  width: 70%;
+}
+
+.brand {
+  position: absolute;
+  height: 40%;
+  left: 15vw;
+  top: 30vw;
+  right: 5vw;
+}
+.brand h1 {
+  font-size: 60px;
+  line-height: 10px;
+}
+.brand h1:after {
+  content: "";
+  display: block; /* 使得伪元素成为块级元素 */
+  height: 6px; /* 分割条的高度 */
+  background-color: rgb(45, 33, 174); /* 分割条的颜色 */
+  width: 100%; /* 分割条的宽度，这里设置为100%以使其充满其父元素的宽度 */
+  margin-top: 30px; /* 根据需要调整与h1的距离 */
+  margin-bottom: 10px; /* 根据需要调整与p的距离 */
+}
+.brand p {
+  font-size: 15px;
+  text-indent: 2ch; /* 使用字符单位 */
+  line-height: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.nav-container {
+  position: absolute; /* 绝对定位 */
+
+  top: 100px; /* 顶部对齐 */
+  right: 80px; /* 右侧对齐 */
+  /* 你可以添加一些内边距或外边距来调整与边缘的距离 */
+  padding: 20px; /* 内边距 */
+  display: flex; /* 使用Flexbox来水平排列导航项 */
+  align-items: center; /* 垂直居中导航项 */
+}
+
+.nav-container ul {
+  list-style: none; /* 移除列表项前面的默认标记 */
+  margin: 0; /* 移除默认的外边距 */
+  padding: 0; /* 移除默认的内边距 */
+  display: flex; /* 使用Flexbox来水平排列列表项 */
+}
+
+.nav-container ul li {
+  /* 你可以在这里添加一些内边距或外边距来分隔导航项 */
+  margin-left: 20px;
+  color: bisque; /* 左侧外边距 */
+}
+
+.nav-container ul li a {
+  text-decoration: none; /* 移除链接的下划线 */
+  color: #ffffff;
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.nav-container ul li a:hover {
+  color: rgb(228, 65, 105);
+}
+
+main {
+  display: flex; /* 启用 Flexbox 布局 */
+  align-items: center; /* 垂直居中子元素（如果需要） */
+  justify-content: space-between; /* 子元素之间的空间分布，或者你可以使用 flex-start 来让它们从起点开始排列 */
+  padding: 50px; /* 根据需要调整顶部内边距 */
+  margin-top: 150px;
+}
+
+.bigletter {
+  font-size: 70px;
+}
+.imagebox {
+  width: 500px;
+  margin-right: 100px;
+}
+.view1 {
+  gap: 80px; /* 在子元素之间添加20px的空间 */
+  padding: 0; /* 移除内边距 */
+  margin: 10px 0; /* 上下边距为10px，左右边距为0 */
+  /* 或者根据需要调整 */
+}
+.view2 {
+  gap: 50px; /* 在子元素之间添加20px的空间 */
+  padding: 0; /* 移除内边距 */
+  /* 其他样式 */
+  margin-top: 100px; /* 增加与上一个元素的距离 */
+  /* 其他样式 */
+}
+.view3 {
+  gap: 50px; /* 在子元素之间添加20px的空间 */
+  padding: 0; /* 移除内边距 */
+  /* 其他样式 */
+  margin-top: 100px; /* 增加与上一个元素的距离 */
+  /* 其他样式 */
+}
+.view4 {
+  gap: 50px; /* 在子元素之间添加20px的空间 */
+  padding: 0; /* 移除内边距 */
+  /* 其他样式 */
+  margin-top: 100px; /* 增加与上一个元素的距离 */
+  /* 其他样式 */
+}
+.view1,
+.view2,
+.view3,
+.view4 {
+  display: flex;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+  align-items: center; /* 垂直居中子元素（如果需要） */
+  justify-content: center; /* 水平居中整体 */
+  animation-fill-mode: forwards;
+}
+.view1 img {
+  max-width: 25%;
+}
+.view2 img {
+  max-width: 18%; /* 限制图片的最大宽度为父容器的宽度 */
+  height: auto; /* 保持图片的高度自动调整以维持宽高比 */
+}
+.view3 img {
+  max-width: 15%; /* 限制图片的最大宽度为父容器的宽度 */
+  height: auto; /* 保持图片的高度自动调整以维持宽高比 */
+}
+.view4 img {
+  max-width: 35%; /* 限制图片的最大宽度为父容器的宽度 */
+  height: auto; /* 保持图片的高度自动调整以维持宽高比 */
+}
+
+footer {
+  background-color: transparent;
+  margin-top: 50px;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+}
