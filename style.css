@@ -102,7 +102,7 @@ main {
   font-size: 70px;
 }
 .imagebox {
-  width: 500px;
+  max-width: 100%;
   margin-right: 100px;
 }
 .view1 {
@@ -213,25 +213,31 @@ footer {
   }
 
   /* 如果需要，也可以调整导航栏的样式 */
+  /* ... 其他样式 ... */
+
+  /* 调整导航栏的样式 */
   .nav-container {
     position: static; /* 取消绝对定位 */
     padding: 10px 0; /* 减小内边距并居中显示 */
-    text-align: center; /* 导航项居中显示 */
+    text-align: center; /* 导航项居中显示（但这通常不会影响Flex子项的水平排列）*/
+    display: flex; /* 确保容器是Flex布局 */
+    flex-direction: row; /* 导航项水平排列（如果需要的话，因为默认就是row）*/
+    justify-content: space-around; /* 在项目之间平均分配空间 */
   }
 
-  .nav-container ul li {
-    margin: 0 10px; /* 改为左右边距，以适应小屏幕 */
-    display: inline-block; /* 列表项水平显示 */
-  }
   .nav-container ul {
-    flex-direction: column; /* 在小屏幕上，导航项垂直排列 */
-    align-items: center; /* 水平居中 */
+    /* flex-direction: column; 这一行应该被移除或注释掉 */
+    list-style: none; /* 移除列表样式 */
+    padding: 0; /* 移除内边距 */
+    margin: 0; /* 移除外边距 */
+    display: flex; /* 如果ul不是直接Flex子项，则可能需要这个，但通常.nav-container已经是Flex容器了 */
   }
 
   .nav-container ul li {
-    margin: 10px 0; /* 上下边距，移除左右边距 */
+    /* display: inline-block; 这一行应该被移除，因为Flex布局会自动处理 */
+    margin: 0 10px; /* 保留左右边距 */
+    /* margin: 10px 0; 这一行是之前用于垂直排列的，现在不再需要 */
   }
-
   main {
     padding: 20px;
     margin-top: 50px;
@@ -260,7 +266,7 @@ footer {
   .view2 img,
   .view3 img,
   .view4 img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
   }
 
