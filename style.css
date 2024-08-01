@@ -249,7 +249,13 @@ footer {
 
   .imagebox {
     width: 100%;
-    margin-right: 0;
+    margin-right: 0; /* 实际上，如果.imagebox是块级元素且没有其他兄弟元素需要右边距，这行可以省略 */
+    overflow: hidden; /* 确保内容不会溢出容器 */
+  }
+  .imagebox img {
+    width: 100%; /* 使图片宽度适应.imagebox的宽度 */
+    height: auto; /* 保持图片的原始宽高比 */
+    display: block; /* 移除图片底部的默认空间（如果有的话） */
   }
 
   .view1,
